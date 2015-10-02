@@ -1,0 +1,25 @@
+{
+    "name": "bytepark/migration-cli",
+    "type": "project",
+    "description": "bytepark Component - Lightweight and flexible database schema and data migration for the CLI",
+    "keywords": ["library", "database", "migration", "cli"],
+    "homepage": "http://www.bytepark.de",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "bytepark GmbH",
+            "email": "code@bytepark.de"
+        }
+    ],
+    "autoload": {
+        "psr-4": { "Bytepark\\Component\\Migration\\Cli\\": "src" }
+    },
+    "require" : {
+        "bytepark/lib-migration" : "~1.0",
+        "symfony/console": "~2.7",
+        "symfony/config": "~2.7"
+    },
+    "require-dev" : {
+        "phpunit/phpunit": "~4.0"
+    }
+}
