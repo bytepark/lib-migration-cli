@@ -3,7 +3,15 @@
 
 require __DIR__ . '/../vendor/autoload.php';
 
-use Bytepark\Component\Migration\Cli\MigrationApplication;
+use Symfony\Component\Config\FileLocator;
+use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
 
-$application = new MigrationApplication();
-$application->run();
+$container = new ContainerBuilder();
+$loader = new XmlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
+$loader->load('services.xml');
+
+$output = $container->get('symfony.console_output');
+
+$application = $container->get('migration.application');
+$application->run(null, $output);

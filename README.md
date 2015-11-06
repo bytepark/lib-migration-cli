@@ -1,6 +1,6 @@
 # Database migration library CLI
 
-Adapter package for bytepark/migration and the CLI
+CLI providing database migrations using the lib-migration component.
 
 ## Usage
 
